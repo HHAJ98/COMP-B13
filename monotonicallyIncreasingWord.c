@@ -1,8 +1,7 @@
-int monotonicallyIncreasingWord (char *word){
-    int i;
-    for(i = 1; i < 100; i++){
-        if(word[i-1] < word[i]) return 0;
+int monotonicallyIncreasingWord(char *word){
+    int *letter;
+    for(letter = word + 1; letter; letter++){
+        if(letter -1 < letter) return 0;
     }
-
     return 1;
 }
