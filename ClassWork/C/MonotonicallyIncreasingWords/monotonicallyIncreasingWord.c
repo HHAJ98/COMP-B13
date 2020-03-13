@@ -12,9 +12,9 @@
   * This function returns 0 if a word isn't monotonically Increasing, and 1 
   * otherwise. That is: if each letter in the word is strictly alphabeticaly
   * after the letter before it. This is a simple check, and assumes that words:
-  * 	- are all lowercase
-  *		- are less than 100 characters long
-  *		- contain no special symbols
+  *	- are all lowercase
+  *	- are less than 100 characters long
+  *	- contain no special symbols
   *  
   * @param *word a pointer to a c string < 100 characters long including NULL
   * @return 1 if the word is monotonically increasing, 0 if otherwise. 
