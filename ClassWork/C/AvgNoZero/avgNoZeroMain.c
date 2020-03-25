@@ -13,7 +13,6 @@
 #include <stdio.h>
 #define SIZE 1000
 
-//prototype: lets the compiler know what the function is
 double avgNoZero(double array[], int size); 
 
 int main(int argc, char **argv){
