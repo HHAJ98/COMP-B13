@@ -13,7 +13,7 @@
 polynomialA:
         movl        %edi, %eax      #x
         imull       %eax, %eax      #x^2
-        imull       $3, %eax, %eax  #3x^2
+        imull       $3,   %eax      #3x^2
 
         movl        %esi, %ecx      #y
         movl        %edi, %edx      #x
@@ -24,7 +24,7 @@ polynomialA:
         imull       %edx, %edx      #y^2
         imull       $5, %edx        #5y^2
         
-        addl        %ecx, %eax
-        addl        %edx, %eax
+        addl        %ecx, %eax      #3x^2 + 2xy
+        addl        %edx, %eax      #3x^2 + 2xy + 5y^2
         ret
         
