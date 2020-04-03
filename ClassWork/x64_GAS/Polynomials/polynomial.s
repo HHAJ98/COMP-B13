@@ -18,11 +18,11 @@ polynomialA:
         movl        %esi, %ecx      #y
         movl        %edi, %edx      #x
         imull       %edx, %ecx      #x * y
-        imull       $2, %ecx, %ecx  #2xy
+        imull       $2,   %ecx      #2xy
 
         movl        %esi, %edx      #y
         imull       %edx, %edx      #y^2
-        imull       $5, %edx, %edx  #5y^2
+        imull       $5, %edx        #5y^2
         
         addl        %ecx, %eax
         addl        %edx, %eax
