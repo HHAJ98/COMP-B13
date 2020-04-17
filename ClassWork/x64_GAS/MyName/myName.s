@@ -7,77 +7,80 @@ LoopBody:
 	movq	%rcx,	%r8
 	imull	%edx,	%ecx		# NumRows * NumCols
 
+# The start of the A
 	cmpq	$1,		%r8
-	jle		L0
+	jle		A0
 	movb	$'*',	1(%rdi, %rcx)
 	movb	$'*',	13(%rdi, %rcx)
-L0:
+A0:
 	cmpq	$0,		%r8
-	jle		L1
+	jle		A1
 	movb	$'*',	3(%rdi, %rcx)
 	movb	$'*',	11(%rdi, %rcx)
-L1:
+A1:
 	movb	$'*',	5(%rdi, %rcx)
 	movb	$'*',	9(%rdi, %rcx)
 
 	cmpq	$7,		%r8
-	jge		L2
+	jge		J0
 	cmpq	$3,		%r8
-	je		L2
+	je		J0
 	cmpq	$4, 	%r8
-	je		L2
+	je		J0
 	movb	$'*',	7(%rdi, %rcx)
-L2:
+# The start of the J
+J0:
 	cmpq	$3,		%r8
-	jle		L3
+	jle		J1
 	cmpq	$7, 	%r8
-	jge		L3
+	jge		J1
 	movb	$'*',	17(%rdi, %rcx)
-L3:
+J1:
 	cmpq	$3,		%r8
-	jle		L4
+	jle		J2
 	cmpq	$8,		%r8
-	jge		L4
+	jge		J2
 	movb	$'*',	19(%rdi, %rcx)
-L4:
+J2:
 	cmpq	$3,		%r8
-	jle		L5
+	jle		J3
 	movb	$'*',	21(%rdi, %rcx)
-L5:
+J3:
 	cmpq	$5,		%r8
-	jle		L6
+	jle		J4
 	movb	$'*',	23(%rdi, %rcx)
-L6:
+J4:
 	movb	$'*',	25(%rdi, %rcx)
 	
 	cmpq	$8,		%r8
-	jge		L7
+	jge		J5
 	movb	$'*',	27(%rdi, %rcx)
-L7:
+J5:
 	cmpq	$7,		%r8
-	jge		L8
+	jge		F0
 	movb	$'*',	29(%rdi, %rcx)
-L8:
+# The start of the F
+F0:
 	movb	$'*',	37(%rdi, %rcx)
 	movb	$'*',	39(%rdi, %rcx)
 	movb	$'*',	41(%rdi, %rcx)
 
 	cmpq	$6,		%r8
-	jge		L9
+	jge		F1
 	cmpq	$3,		%r8
-	je		L9
+	je		F1
 	movb	$'*',	43(%rdi, %rcx)
 	movb	$'*',	45(%rdi, %rcx)
 	movb	$'*',	47(%rdi, %rcx)
-L9:
+F1:
 	cmpq	$3,		%r8
-	jge		L10
+	jge		F2
 	movb	$'*',	49(%rdi, %rcx)
-L10:
+F2:
 	incl	%eax
 Condition:
 	cmpl	%esi,	%eax	# Jump if we've done this to all the rows.
 	jl	LoopBody
 
-	movq	$0,	%rax
+	# movq	$0,	%rax
 ret
