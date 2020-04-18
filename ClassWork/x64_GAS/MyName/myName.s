@@ -3,8 +3,12 @@
  * with my name in block letters.
  *
  * How this works:
- * movb	$'*',	1(%rdi, %rcx)
- * puts an asterix in column 
+ * 		movb	$'*',	1(%rdi, %rcx)
+ * puts an asterix in column 1 at the current row. 
+ * 
+ * The function loops through all the rows, replacing the appropriate spaces by
+ * filling each column, using conditional jumping to skip the replacement for 
+ * the appropriate rows.
  *
  * @author:     AJ Ferraro
  * Course:      COMP B13
