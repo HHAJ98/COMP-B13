@@ -1,10 +1,24 @@
+/**
+ * Contains the function myName, which takes a 2d array of spaces and fills it
+ * with my name in block letters.
+ *
+ * How this works:
+ * movb	$'*',	1(%rdi, %rcx)
+ * puts an asterix in column 
+ *
+ * @author:     AJ Ferraro
+ * Course:      COMP B13
+ * Created on:  04.17.2020
+ * Source File: myNameMain.c
+ */
+
 	.globl		myName
 myName:
 	movq	$0,	%rax
 	jmp	Condition
 LoopBody:
 	movl	%eax,	%ecx		# Get current row
-	movq	%rcx,	%r8
+	movq	%rcx,	%r8			# Move current row to %r8
 	imull	%edx,	%ecx		# NumRows * NumCols
 
 # The start of the A
