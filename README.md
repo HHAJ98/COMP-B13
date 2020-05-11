@@ -10,4 +10,8 @@ Class Work
   - 03.24.20   - Assignment 5: IfElseAndLoops **C**: We were provided two assembly programs and tasked with translating them into C: one with a series of complex conditionals and one with a single loop.
   - 03.26.20   - Assignment 6: CallC-AL-C **x64 GAS**: A simple in-class assignment containing an assembly function that calls another function and returns twice that result.
   - 04.02.20   - Assignment 7: Polynomial **x64 GAS**: A function that returns a polynomial of its two inputs, using the imul instruction
-  - 04.17.29   - Assignment 8: MyName **x64 GAS**: A function that manipulates a 2D array of chars so that it contains my name in block letters
+  - 04.17.20   - Assignment 8: MyName **x64 GAS**: A function that manipulates a 2D array of chars so that it contains my name in block letters
+
+Exam Prep
+----------
+  - 05.11.20   - Polynomial2: **x64 GAS**: Prep for the programming portion of the final, similare to assingment 7, but with a slightly more complex polynomial. Completed in less than 30 mins.
